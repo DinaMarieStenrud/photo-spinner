@@ -20,7 +20,7 @@ const Wheel: React.FC<Props> = ({ participants }) => {
   const [showOverlay, setShowOverlay] = useState(false);
   const [showBlitz, setShowBlitz] = useState(false);
 
-  // rens navn
+  
   const names = participants.map(s => s.trim()).filter(Boolean);
   const n = Math.max(1, names.length);
 
@@ -33,7 +33,7 @@ const Wheel: React.FC<Props> = ({ participants }) => {
       .catch(() => setChallenges([]));
   }, []);
 
-  // tegn hjulet
+// Hjulet og spin-funksjonen er hentet fra nettet og deretter modifisert til dette prosjektet
   useEffect(() => {
     const canvas = canvasRef.current; if (!canvas) return;
     const ctx = canvas.getContext("2d"); if (!ctx) return;
@@ -79,7 +79,7 @@ const Wheel: React.FC<Props> = ({ participants }) => {
   const capitalize = (s?: string) =>
     (s ?? "").replace(/^\s*(.)/, (_, c: string) => c.toUpperCase());
 
-  // spin
+ 
   const spin = () => {
     if (spinning || names.length === 0) return;
 
@@ -177,14 +177,14 @@ const Wheel: React.FC<Props> = ({ participants }) => {
           onClick={spin}
           disabled={spinning || names.length === 0}
           style={{
-            backgroundColor: "#1e293b", color: "white",
+            backgroundColor: "#030303ff", color: "white",
             fontFamily: "Inter", fontWeight: 400, textTransform: "uppercase",
             letterSpacing: "0.5px", padding: "10px 24px",
             borderRadius: "8px", border: "none", cursor: "pointer",
             transition: "background-color 0.2s ease, transform 0.1s ease",
           }}
           onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#ce3030ff")}
-          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#1e293b")}
+          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#060606ff")}
           onMouseDown={(e) => (e.currentTarget.style.transform = "scale(0.96)")}
           onMouseUp={(e) => (e.currentTarget.style.transform = "scale(1)")}
         >

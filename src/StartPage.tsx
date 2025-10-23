@@ -20,10 +20,10 @@ const StartPage: React.FC = () => {
 
   return (
     <div id="contain">
-      <h1 id="game1">Her er game 1</h1>
-      <h2>Skriv inn navnet på deltakerne</h2>
+      <h1 id="game1">Photo-spinner</h1>
+      <h2 id="names">Skriv inn navnet på deltakerne</h2>
 
-      <div id="player-inputs">
+      <div>
         {players.map((val, i) => (
           <div key={i} className="player-field">
             <label htmlFor={`player-${i}`}>Deltaker {i + 1}</label>

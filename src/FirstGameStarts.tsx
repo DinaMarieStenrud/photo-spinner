@@ -19,8 +19,8 @@ const FirstGameStarts: React.FC = () => {
 
   return (
     <div id="fullsizeDiv">
-      <div id="div2" style={{ textAlign: "center", fontFamily: "Inter" }}>
-        <h1>Spillet starter!</h1>
+      <div id="div2">
+        <h1 style={{color: "white"}}>Spillet starter!</h1>
         <div className="wheelCenter">
           <Wheel participants={players} />
           <img src={camera} alt="Kamera" id="camera" />
